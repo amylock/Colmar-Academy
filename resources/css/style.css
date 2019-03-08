@@ -6,13 +6,21 @@
 html {
   width: 100%;
   font-size: 16px;
+  color: #10334f;
+  font-family: "PT Serif", serif;
+}
+
+main,
+footer {
+  margin-top: 64px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-weight: bold;
+    font-family: "Patua One";
+    line-height: 1.1em;
 }
 
 h1 {
@@ -34,22 +42,19 @@ h4 {
 }
 
 p {
-  margin: 8px 0;
+  line-height: 1.3em;
 }
 
 strong {
   font-weight: bold;
-  color: black;
+  color: #10334f;
 }
 
 a {
-  color: blue;
+  color: #3129C1;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .text {
   display: flex;
@@ -57,201 +62,397 @@ a {
   justify-content: center;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 32px;
+.text p,
+.text a {
+  padding: 8px 0 0 0;
 }
 
-.special {
-    background-color: gray;
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+nav a {
+  margin-left: 16px;
+  color: black;
+}
+
+a {
+  transition: color 1ms ease-in 1ms;
+}
+
+a:hover {
+  color: #C51A15;
+}
+
+@media only screen and (min-width: 650px) {
+  .special {
+      background-color: #D9DBA9;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 /* header */
-
 header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.desktop-header {
+  display: none;
+}
+
+.logo-mobile {
+    height: 32px;
+    width: auto;
+}
+
+.main-nav-mobile {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
-  margin: auto 24px;
+  padding: 16px 32px;
+  width: 100%;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
+@media only screen and (min-width: 730px) {
+    .main-nav-mobile {
+      display: none;
+    }
 
-.logo span {
-  text-transform: uppercase;
-  font-size: 20px;
-  color: gray;
-}
+    .desktop-header {
+      display: flex;
+      justify-content: space-between;
+      margin: auto 24px;
+      width: 100%;
+    }
 
-.logo img {
-  height: 32px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-.main-nav {
-  display: flex;
-  font-size: 20px;
-}
+    .logo span {
+      text-transform: uppercase;
+      font-size: 20px;
+      color: #D9DBA9;
+      font-family: "Patua One";
+    }
 
-.main-nav a {
-  margin-left: 16px;
+    .logo img {
+      height: 32px;
+    }
+
+    .desktop-header nav {
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+    }
 }
 
 /* banner */
 
 .banner {
-  display: flex;
-  background-color: gray;
-}
-
-.banner img {
-  width: 60%;
-  height: 100%;
-  padding: 32px 24px;
+  background-color: #D9DBA9;
 }
 
 .banner-words {
-  margin-right: 72px;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
 }
 
 .btn {
-    padding: 8px 0;
-    background-color: red;
+    background-color: #C51A15;
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: #F1FAD2;
     font-size: 20px;
+    padding: 8px 0;
     margin-top: 24px;
+    width: 100%;
+    border-radius: 3px;
+    transition: background-color 2ms ease-in 3ms;
+}
+
+.btn:hover {
+  background-color: #f00;
+}
+
+/*  Condsider a tablet header */
+
+@media only screen and (min-width: 650px) {
+
+  .banner {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  .banner img {
+    width: 60%;
+    height: 100%;
+    padding: 32px 24px;
+  }
+
+  .banner-words {
+    text-align: left;
+    margin-right: 72px;
+  }
 }
 
 /* about */
 
+.main,
+.desktop-image {
+  display: none;
+}
+
 .about {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: lightgray;
-}
-
-.main {
-  width: 60%;
-  padding: 32px 24px;
-}
-
-.main img {
-  width: 100%;
   padding-bottom: 32px;
 }
 
-.name {
-  margin-top: 32px;
-}
-
-.secondary {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-top: 16px;
+.mobile-image {
+  display: block;
+  width: 100%;
 }
 
 .about-item {
-  display: flex;
-}
-
-.about-item img {
-  width: 35%;
-  height: 100%;
+  width: 100%;
+  height: auto;
   padding: 16px;
 }
 
-.about-item a {
-  margin-top: 20px;
+.about-item .text {
+  padding: 16px 16px 0 16px;
 }
 
-.about-item .text {
-  margin-right: 32px;
+/* add tablet media querie  */
+
+@media only screen and (min-width: 700px){
+
+  .about {
+    display: flex;
+    background-color: #F1FAD2;
+    width: 100%;
+  }
+
+  .main {
+    flex-shrink: 2;
+    display: block;
+    width: 60%;
+    padding: 32px 24px 0 24px;
+}
+
+    .main img {
+      width: 100%;
+      padding-bottom: 32px;
+    }
+
+    .name {
+      margin-top: 32px;
+    }
+
+    .secondary {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      margin-top: 16px;
+      min-width: 420px;
+    }
+
+    .about-item {
+      display: flex;
+    }
+
+    .mobile-image {
+      display: none;
+    }
+
+    .desktop-image {
+      display: inline-block;
+      width: 35%;
+      height: 100%;
+    }
 }
 
 /* courses */
 
-.courses {
-    background-color: gray;
-    padding: 32px 56px;
+.courses img, .words p {
+  display: none;
 }
 
-.courses .container {
-  justify-content: center;
+.courses {
+  padding: 32px 0;
+  border-top: 1px solid #D9DBA9;
 }
 
 .course {
-  width: 30%;
-  margin: 16px;
-  background-color: white;
-}
-
-.course img {
-  width: 100%;
-}
-
-.course .uppercase {
-  text-transform: uppercase;
-  margin: 8px 0;
-}
-
-.course .words {
   padding: 16px;
+  background-color: #D9DBA9;
+  margin: 16px;
+  transition: position, box-shawdow 20ms ease-in 10ms;
+}
+
+.course:hover {
+  position: relative;
+  top: -12px;
+  left: -12px;
+  box-shadow: 5px 5px 8px #888888;
+}
+
+@media only screen and (min-width: 650px){
+
+  .courses img, .words p {
+    display: inline-block;
+  }
+
+  .courses {
+      background-color: #D9DBA9;
+      padding: 32px 16px;
+  }
+
+  .courses .container {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .course {
+    width: 28%;
+    background-color: white;
+  }
+
+  .course img {
+    width: 100%;
+  }
+
+  .course .uppercase {
+    text-transform: uppercase;
+  }
+
+  .course .words {
+    padding: 16px;
+  }
+
+}
+
+@media only screen and (min-width: 1090px) {
+  .courses {
+      padding: 32px 56px;
+  }
+
+  .course {
+    width: 30%;
+  }
 }
 
 /* thesis */
 
+.thesis-items,
+.thesis h4,
+.thesis p {
+  display: none;
+}
+
 .thesis {
-  padding: 32px 0;
-  background-color: lightgray;
-  border-bottom: 2px solid gray;
+  padding: 32px 0 24px 0;
+  border-top: 1px solid #D9DBA9;
 }
 
-.video {
-  width: 60%;
-  height: 100%;
-  padding: 0 24px;
-}
 
- video {
-   width: 100%;
-   height: 100%;
-   padding-bottom: 24px;
- }
+@media only screen and (min-width: 650px){
 
-.thesis-items {
-  width: 40%;
+  .thesis-items,
+  .thesis h4,
+  .thesis p {
+    display: inline-block;
+  }
 
-}
+  .thesis {
+    padding: 32px 0;
+    background-color: #F1FAD2;
+    border-bottom: 2px solid #D9DBA9;
+  }
 
-.thesis-item + .thesis-item {
-  padding-top: 16px;
-}
+  .video {
+    width: 60%;
+    height: 100%;
+    padding: 0 24px;
+  }
 
-.thesis-item {
-  display: flex;
-}
+   video {
+     width: 100%;
+     height: 100%;
+     padding-bottom: 24px;
+   }
 
-.thesis-item img {
-  width: 35%;
-  height: 100%;
-  padding: 16px;
+  .thesis-items {
+    width: 40%;
+  }
+
+  .thesis-item + .thesis-item {
+    padding-top: 16px;
+  }
+
+  .thesis-item {
+    display: flex;
+  }
+
+  .thesis-item img {
+    width: 35%;
+    height: 100%;
+    padding: 16px;
+  }
+
 }
 
 /* footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px 24px;
-  height: 72px;
-}
 
 .sec-nav {
-  display: flex;
+  display: none;
+}
+
+.footer {
+  padding: 16px;
+  color: black;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px 48px 16px;
+    height: 72px;
+  }
+
+  .sec-nav {
+    display: flex;
+  }
+
+  .sec-nav a {
+    margin: 16px;
+  }
+
 }
